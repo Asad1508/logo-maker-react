@@ -5,9 +5,15 @@ import { UpdateStorageContext } from "../context/updateContext";
 
 const backgroundController = () => {
   const storageValue = JSON.parse(localStorage.getItem("value"));
-  const [rounded, setRounded] = useState(storageValue?storageValue?.bgRounded:0);
-  const [padding, setPadding] = useState(storageValue?storageValue?.bgPaddig:0);
-  const [color, setColor] = useState(storageValue?storageValue?.bgColor:"#fff");
+  const [rounded, setRounded] = useState(
+    storageValue ? storageValue?.bgRounded : 0
+  );
+  const [padding, setPadding] = useState(
+    storageValue ? storageValue?.bgPaddig : 0
+  );
+  const [color, setColor] = useState(
+    storageValue ? storageValue?.bgColor : "#fff"
+  );
   const { updateStorage, setUpdateStorage } = useContext(UpdateStorageContext);
 
   useEffect(() => {

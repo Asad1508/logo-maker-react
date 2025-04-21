@@ -14,7 +14,7 @@ function App() {
   const [count, setCount] = useState(0);
   const [selectedIndex, setSelectedIndex] = useState();
   const [updateStorage, setUpdateStorage] = useState();
-  const [downloadIcon, setDownloadIcon] = useState()
+  const [downloadIcon, setDownloadIcon] = useState();
   return (
     <>
       <UpdateStorageContext.Provider
@@ -31,7 +31,7 @@ function App() {
           </div>
           <div className="bg-orange-200 round">
             <span>
-              <LogoPreview downloadIcon={downloadIcon}/>
+              <LogoPreview downloadIcon={downloadIcon} />
             </span>
           </div>
         </div>

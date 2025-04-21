@@ -76,24 +76,23 @@ const IconList = ({ selectedIcon }) => {
                 </TabsContent>
                 <TabsContent value="color-icon">
                   <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4 overflow-auto h-[400px] p-6">
-                  {pngIconList?.map((iconName, index) => (
-  <div
-    key={index}
-    className="border p-3 flex rounded-sm items-center justify-center cursor-pointer"
-    onClick={() => {
-      setIcon(iconName);
-      selectedIcon(iconName);
-      setDialog(false);
-    }}
-  >
-    <img
-      src={BASE_URL + "/png/" + iconName}
-      alt={iconName}
-      className="w-8 h-8 object-contain"
-    />
-  </div>
-))}
-
+                    {pngIconList?.map((iconName, index) => (
+                      <div
+                        key={index}
+                        className="border p-3 flex rounded-sm items-center justify-center cursor-pointer"
+                        onClick={() => {
+                          setIcon(iconName);
+                          selectedIcon(iconName);
+                          setDialog(false);
+                        }}
+                      >
+                        <img
+                          src={BASE_URL + "/png/" + iconName}
+                          alt={iconName}
+                          className="w-8 h-8 object-contain"
+                        />
+                      </div>
+                    ))}
                   </div>{" "}
                 </TabsContent>
               </Tabs>

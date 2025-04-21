@@ -5,11 +5,15 @@ import { UpdateStorageContext } from "../context/updateContext";
 import IconList from "./IconList";
 const iconController = () => {
   const storageValue = JSON.parse(localStorage.getItem("value"));
-  const [size, setSize] = useState(storageValue?storageValue?.iconSize: 280);
-  const [rotate, setRotate] = useState(storageValue?storageValue?.iconRotate:0);
-  const [color, setColor] = useState(storageValue?storageValue?.iconColor:"#fff");
+  const [size, setSize] = useState(storageValue ? storageValue?.iconSize : 280);
+  const [rotate, setRotate] = useState(
+    storageValue ? storageValue?.iconRotate : 0
+  );
+  const [color, setColor] = useState(
+    storageValue ? storageValue?.iconColor : "#fff"
+  );
   const { updateStorage, setUpdateStorage } = useContext(UpdateStorageContext);
-  const [icon, setIcon] = useState(storageValue?storageValue?.icon:'Smile')
+  const [icon, setIcon] = useState(storageValue ? storageValue?.icon : "Smile");
   useEffect(() => {
     const updatedValue = {
       ...storageValue,
@@ -22,11 +26,10 @@ const iconController = () => {
     localStorage.setItem("value", JSON.stringify(updatedValue));
   }, [size, rotate, color, icon]);
   console.log("this is icon ", icon);
-  
 
   return (
     <div>
-    <IconList selectedIcon={(icon) => setIcon(icon)} />
+      <IconList selectedIcon={(icon) => setIcon(icon)} />
       <div className="py-2">
         <label className="p-2 flex justify-between items-center bg-white">
           Size <span>{size} px</span>
